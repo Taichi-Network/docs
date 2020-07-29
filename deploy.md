@@ -2,6 +2,7 @@
 # 太极网络（Taichi）推送交易的接入教程
 ## 接入推送
 矿池节点想接入太极网络，得到交易的推送非常简单，只需要告知我们矿池节点的 enode，并且矿池节点把太极的 enode 添加为静态/保留节点即可。
+具体enode由我们另外提供。
 
 ### Geth
 * 静态节点列表的位置在 `<datadir>/geth/static-nodes.json` . <datadir>由命令行参数--datadir指定, 默认为`$HOME/.ethereum`
