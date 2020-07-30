@@ -5,6 +5,7 @@
 ## 共同说明
 
 ### 接口地址
+具体地址由我们另外提供
 POST http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79
 
 ### 协议
