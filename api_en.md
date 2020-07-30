@@ -3,8 +3,9 @@
 
 ## API Endpoint
 Actual enpoint will be provided by us.
+Example:
 
-POST http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79
+`http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79`
 
 ## JSON-RPC Methods
 
