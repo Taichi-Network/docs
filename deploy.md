@@ -12,7 +12,7 @@
 "enode://3a682d77eb93b51582fac59182fa569819c6cc9e482e6b4e45307dcb5891fbf5c28fe71c91cd69f5a3317fe070e7a03f0887d3706901a36b2432da8232a4beff@10.5.30.150:30305"
 ]
 ```
-* 如果使用toml文件,须在`[Node.P2P]`项的`StaticNodes`里添加, 如
+* 如果使用toml配置文件, 须在`[Node.P2P]`项的`StaticNodes`里添加, 如
 ```toml
 [Node.P2P]
 StaticNodes = ["enode://3a682d77eb93b51582fac59182fa569819c6cc9e482e6b4e45307dcb5891fbf5c28fe71c91cd69f5a3317fe070e7a03f0887d3706901a36b2432da8232a4beff@10.5.30.150:30305"]
