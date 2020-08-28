@@ -36,6 +36,7 @@ curl -X POST \
 ```
 
 ### eth_sendRawTransactions
+commit a maximum of 20 transactions
 
 * Request
 
