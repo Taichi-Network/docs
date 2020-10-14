@@ -5,17 +5,17 @@
 Actual enpoint will be provided by us.
 Example:
 
-`http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79`
+`http://api.taichi.network:10000/rpc/public`
 
 ## JSON-RPC Methods
 
 ### eth_sendRawTransaction
 
-* Request
+### Request
 
 ```shell script
 curl -X POST \
-  http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79 \
+  http://api.taichi.network:10000/rpc/public \
   -H 'content-type: application/json' \
   -d '{
     "jsonrpc":"2.0",
@@ -26,7 +26,7 @@ curl -X POST \
     "id":1
 }'
 ```
-* Response
+### Response Example
 ```shell script
 {
     "jsonrpc": "2.0",
@@ -35,33 +35,52 @@ curl -X POST \
 }
 ```
 
-### eth_sendRawTransactions
-commit a maximum of 20 transactions
+### eth_sendPrivateTransaction
+Submit a signed transaction to the node, the transaction will not be broadcast to the Ethereum network through p2p.
 
-* Request
+### Request
 
 ```shell script
 curl -X POST \
-  http://api.taichi.network:10000/rpc/af9cfc6d90f2489d91c357d449da5b79 \
+  http://api.taichi.network:10000/rpc/public \
   -H 'content-type: application/json' \
   -d '{
          "jsonrpc":"2.0",
-         "method":"eth_sendRawTransactions",
+         "method":"eth_sendPrivateTransaction",
          "params":[
-             "0xf86c79851a8aedf40082520894f16b4261108f81606eaee9fbe1ae5c7ed812be3988b72fd2103b2800008025a0f7a0cee0fa8dbad6d3afa692b639beae1006c0fef539d699feebb9136215bb62a016f52055834db1abe7181f0a09c97e334fc08df1545b4d694e978bb2562b565f",
-             "0xf8ac8201b0851a8aedf4008301117094a6595bcfd91af46900fea8e7c9752db536d798f180b844a9059cbb000000000000000000000000651d23d05481326fb93b3f53ba427e0b235009e000000000000000000000000000000000000000000000000006f05b59d3b2000025a0307ff2fec8cadcbf2b820669675cd09158e1e8187e0e373b226b2d008f4c5939a074b8e425a86c1cd6772d9e7fff45e3aa2111de120f8f8a2248d24cbde590a0fd"
+             "0xf86c79851a8aedf40082520894f16b4261108f81606eaee9fbe1ae5c7ed812be3988b72fd2103b2800008025a0f7a0cee0fa8dbad6d3afa692b639beae1006c0fef539d699feebb9136215bb62a016f52055834db1abe7181f0a09c97e334fc08df1545b4d694e978bb2562b565f"
          ],
          "id":1
      }'
 ```
-* Response
+### Response Example
 ```shell script
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": [
-        "0x8fa5c40313c69b162de52ce5a8a16894cbd857cdcaebbfdc1249f46d9eaa87c5",
-        "0xd0f623571c7ce1ee2acbce6eee7c99da3fb038892aa9f016b6d38f12c9a591f0"
-    ]
+    "result": "0x8fa5c40313c69b162de52ce5a8a16894cbd857cdcaebbfdc1249f46d9eaa87c5"
+}
+```
+
+## Get gas price
+
+### Request
+- China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
+- International: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
+
+### Parameters
+- utm_source String. Your app name (e.g. imToken)
+
+### Response Example
+```json
+{
+  "code": 200,
+  "data": {
+    "rapid": 180132000000,
+    "fast": 177000000000,
+    "slow": 150000000000,
+    "standard": 109000001459,
+    "timestamp": 1598434638872
+  }
 }
 ```
