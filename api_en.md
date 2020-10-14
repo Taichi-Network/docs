@@ -1,18 +1,26 @@
 # Taichi Netork Transaction API
 ---
 
-## API Endpoint
-Actual enpoint will be provided by us.
-Example:
+## Notice
 
-`http://api.taichi.network:10000/rpc/public`
+### Protocol
+JSON-RPC
 
-## JSON-RPC Methods
+Content-Type: application/json
 
 ### eth_sendRawTransaction
+Submit a signed transaction to the node for broadcasting to the Ethereum network.
 
-### Request
+### Parameters
+1.DATA, signed transaction data.
+```json
+params: ["0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"]
+```
+### Return
+DATA, 32 Bytes - Transaction hash.
 
+### Example
+Request：
 ```shell script
 curl -X POST \
   http://api.taichi.network:10000/rpc/public \
@@ -21,44 +29,52 @@ curl -X POST \
     "jsonrpc":"2.0",
     "method":"eth_sendRawTransaction",
     "params":[
-       "0xf8aa2a85021ea4a10f830155e2940eee3e3828a45f7601d5f54bf49bb01d1a9df5ea80b8444706c375000000000000000000000000a0b86991c6218b36c1d19d4a2e9eb0ce3606eb48000000000000000000000000000000000000000000000000000000000053cfe425a0cf3735fe97ea23c4f7ee2dd62a1aa50ba595b99b347bf7ccd92f3123326a0bffa03bd4da469a1eba694c41d1c24ee56e275ace8c27cba0dc30760c1cdbe2d41ac2"
+       "0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"
     ],
     "id":1
 }'
 ```
-### Response Example
+Response：
 ```shell script
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x29e3be282526f5a6329dc66c539b4d49f5d1d4dd740ed69edcb514150284bb53"
+    "result": "0x6fb9f9012732a51aa3e4fb9e7fa4de62f942b249416d29505bc0b2fac48202b1"
 }
 ```
 
 ### eth_sendPrivateTransaction
 Submit a signed transaction to the node, the transaction will not be broadcast to the Ethereum network through p2p.
 
-### Request
+### Parameters
+1.DATA, signed transaction data.
+```json
+params: ["0xf86c0785080ad9f00082627094302fc4c7231589239912d62ec7ea6266d771cfdf88024a8d93446ac0008025a01450674b2c65e7902d9f03cbf899bb1063b2b14ca5e6a7fa5616d420b67196c1a049063bc399b171b0c570aeba9d33bc78a550701c3e95238947b90f1ccf841032"]
+```
+### Return
+DATA, 32 Bytes - Transaction hash.
 
+### Example
+Request：
 ```shell script
 curl -X POST \
   http://api.taichi.network:10000/rpc/public \
   -H 'content-type: application/json' \
   -d '{
-         "jsonrpc":"2.0",
-         "method":"eth_sendPrivateTransaction",
-         "params":[
-             "0xf86c79851a8aedf40082520894f16b4261108f81606eaee9fbe1ae5c7ed812be3988b72fd2103b2800008025a0f7a0cee0fa8dbad6d3afa692b639beae1006c0fef539d699feebb9136215bb62a016f52055834db1abe7181f0a09c97e334fc08df1545b4d694e978bb2562b565f"
-         ],
-         "id":1
-     }'
+    "jsonrpc":"2.0",
+    "method":"eth_sendPrivateTransaction",
+    "params":[
+       "0xf86c0785080ad9f00082627094302fc4c7231589239912d62ec7ea6266d771cfdf88024a8d93446ac0008025a01450674b2c65e7902d9f03cbf899bb1063b2b14ca5e6a7fa5616d420b67196c1a049063bc399b171b0c570aeba9d33bc78a550701c3e95238947b90f1ccf841032"
+    ],
+    "id":1
+}'
 ```
-### Response Example
+Response：
 ```shell script
 {
     "jsonrpc": "2.0",
     "id": 1,
-    "result": "0x8fa5c40313c69b162de52ce5a8a16894cbd857cdcaebbfdc1249f46d9eaa87c5"
+    "result": "0x2531af4feb0a4ddf256a4b0ffa54563c9a857b7cf6e0987a26e446e1dc015578"
 }
 ```
 
