@@ -80,6 +80,7 @@ Response：
 ```
 
 ## 获取gas price
+接口数据每 8s 更新一次，请控制访问频率，频率太高会被拉黑名单；已部署负载均衡。
 
 ### 请求
 - 中国大陆: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
@@ -102,4 +103,14 @@ Response：
 }
 ```
 
+## RPC Node
+选择延时最低的 rpc 节点，广播交易更高效
+
+* 中国大陆  http://api.taichi.network:10000/rpc/public
+
+* 亚太地区 https://api.taichi.network:10001/rpc/public
+
+* 欧洲  http://api-eu.taichi.network:10000/rpc/public
+
+* 北美  https://api-us.taichi.network:10000/rpc/public
 

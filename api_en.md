@@ -79,6 +79,7 @@ Response：
 ```
 
 ## Get gas price
+Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
 
 ### Request
 - China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
@@ -100,3 +101,14 @@ Response：
   }
 }
 ```
+
+## RPC Node
+Choose the rpc node with the lowest delay, broadcast transactions more efficiently.
+
+* China Mainland  http://api.taichi.network:10000/rpc/public
+
+* Asia-Pacific https://api.taichi.network:10001/rpc/public
+
+* Europe  http://api-eu.taichi.network:10000/rpc/public
+
+* North America  https://api-us.taichi.network:10000/rpc/public**
