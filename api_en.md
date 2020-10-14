@@ -44,7 +44,7 @@ Response：
 ```
 
 ### eth_sendPrivateTransaction
-Submit a signed transaction to the node, the transaction will not be broadcast to the Ethereum network through p2p.
+Submit a signed transaction to the node, and it will not be broadcast to the Ethereum network through p2p before the transaction is confirmed.
 
 ### Parameters
 1.DATA, signed transaction data.
