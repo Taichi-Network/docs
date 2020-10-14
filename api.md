@@ -1,15 +1,37 @@
+## 获取gas price
+接口数据每 8s 更新一次，请控制访问频率，频率太高会被拉黑名单；已部署负载均衡。
 
-# 太极网络（Taichi）rpc接口说明
----
+### 请求
+- 中国大陆: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
+- 国际: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
 
-## 共同说明
+### 参数
+- utm_source String. Your app name (e.g. imToken)
 
-### 协议
-JSON-RPC
+### 响应
+```json
+{
+  "code": 200,
+  "data": {
+    "rapid": 180132000000,
+    "fast": 177000000000,
+    "slow": 150000000000,
+    "standard": 109000001459,
+    "timestamp": 1598434638872
+  }
+}
+```
 
-Content-Type: application/json
+## RPC Node
+选择延时最低的 rpc 节点，广播交易更高效
 
-## eth_sendRawTransaction
+* 亚太地区 https://api.taichi.network:10001/rpc/public
+
+* 欧洲  https://api-eu.taichi.network:10001/rpc/public
+
+* 北美  https://api-us.taichi.network:10001/rpc/public
+
+## 广播交易 eth_sendRawTransaction
 向节点提交一个已签名的交易以便广播到以太坊网络中
 
 ### Parameters
@@ -44,7 +66,7 @@ Response：
 }
 ```
 
-## eth_sendPrivateTransaction
+## 隐私交易 eth_sendPrivateTransaction
 向节点提交一个已签名的交易，交易确认前不会通过p2p广播到以太坊网络中。
 
 ### Parameters
@@ -78,39 +100,4 @@ Response：
     "result": "0x2531af4feb0a4ddf256a4b0ffa54563c9a857b7cf6e0987a26e446e1dc015578"
 }
 ```
-
-## 获取gas price
-接口数据每 8s 更新一次，请控制访问频率，频率太高会被拉黑名单；已部署负载均衡。
-
-### 请求
-- 中国大陆: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
-- 国际: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
-
-### 参数
-- utm_source String. Your app name (e.g. imToken)
-
-### 响应
-```json
-{
-  "code": 200,
-  "data": {
-    "rapid": 180132000000,
-    "fast": 177000000000,
-    "slow": 150000000000,
-    "standard": 109000001459,
-    "timestamp": 1598434638872
-  }
-}
-```
-
-## RPC Node
-选择延时最低的 rpc 节点，广播交易更高效
-
-* 中国大陆  http://api.taichi.network:10000/rpc/public
-
-* 亚太地区 https://api.taichi.network:10001/rpc/public
-
-* 欧洲  http://api-eu.taichi.network:10000/rpc/public
-
-* 北美  https://api-us.taichi.network:10000/rpc/public
 

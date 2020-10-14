@@ -1,12 +1,35 @@
-# Taichi Netork Transaction API
----
+## Get gas price
+Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
 
-## Notice
+### Request
+- China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
+- International: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
 
-### Protocol
-JSON-RPC
+### Parameters
+- utm_source String. Your app name (e.g. imToken)
 
-Content-Type: application/json
+### Response Example
+```json
+{
+  "code": 200,
+  "data": {
+    "rapid": 180132000000,
+    "fast": 177000000000,
+    "slow": 150000000000,
+    "standard": 109000001459,
+    "timestamp": 1598434638872
+  }
+}
+```
+
+## RPC Node
+Choose the rpc node with the lowest delay, broadcast transactions more efficiently.
+
+* Asia-Pacific https://api.taichi.network:10001/rpc/public
+
+* Europe https://api-eu.taichi.network:10001/rpc/public
+
+* North America https://api-us.taichi.network:10001/rpc/public
 
 ### eth_sendRawTransaction
 Submit a signed transaction to the node for broadcasting to the Ethereum network.
@@ -77,38 +100,3 @@ Response：
     "result": "0x2531af4feb0a4ddf256a4b0ffa54563c9a857b7cf6e0987a26e446e1dc015578"
 }
 ```
-
-## Get gas price
-Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
-
-### Request
-- China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
-- International: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
-
-### Parameters
-- utm_source String. Your app name (e.g. imToken)
-
-### Response Example
-```json
-{
-  "code": 200,
-  "data": {
-    "rapid": 180132000000,
-    "fast": 177000000000,
-    "slow": 150000000000,
-    "standard": 109000001459,
-    "timestamp": 1598434638872
-  }
-}
-```
-
-## RPC Node
-Choose the rpc node with the lowest delay, broadcast transactions more efficiently.
-
-* China Mainland http://api.taichi.network:10000/rpc/public
-
-* Asia-Pacific https://api.taichi.network:10001/rpc/public
-
-* Europe http://api-eu.taichi.network:10000/rpc/public
-
-* North America https://api-us.taichi.network:10000/rpc/public
