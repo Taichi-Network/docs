@@ -46,7 +46,7 @@ DATA, 32 Bytes - Transaction hash.
 Request：
 ```shell script
 curl -X POST \
-  http://api.taichi.network:10000/rpc/public \
+  https://api.taichi.network:10000/rpc/public \
   -H 'content-type: application/json' \
   -d '{
     "jsonrpc":"2.0",
@@ -81,7 +81,7 @@ DATA, 32 Bytes - Transaction hash.
 Request：
 ```shell script
 curl -X POST \
-  http://api.taichi.network:10000/rpc/public \
+  https://api.taichi.network:10000/rpc/public \
   -H 'content-type: application/json' \
   -d '{
     "jsonrpc":"2.0",
