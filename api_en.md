@@ -67,7 +67,15 @@ Response：
 ```
 
 ## Private TX | eth_sendPrivateTransaction
-Submit a signed transaction to the node, and it will not be broadcast to the Ethereum network through p2p before the transaction is confirmed.
+Submit a signed transaction to the node, and it will not be broadcasted to the Ethereum network before the transaction is sealed in a block.
+
+### Caveats
+1. We provide private transaction with our best effort. However, there are still ocassions that your private transaction can be exposed to public before 
+confirmation. Such cases include but are not limited to
+    * The block containing private tx becomes uncle block
+    * The block chain reorgnizes and block containing private tx becomes orphaned block
+2. Private transactions still conform to gas price requirement. If the gas price is too low, it will wait for a long time or even lost.
+3. We currently only provide a portion of SparkPool's hash power for private transaction, so not all blocks mined by SparkPool will contain private transaction.
 
 ### Parameters
 DATA, signed transaction data.
