@@ -1,7 +1,7 @@
 
 # 太极网络（Taichi）enode互联接入教程
 ## 互联方法
-太极的 enode 添加为静态/保留节点即可。节点enode地址可以在 https://taichi.network/ 上获取。
+将太极的 enode 添加为ETH节点的静态/保留节点即可建立连接。节点enode地址可以在 https://taichi.network/ 上获取。
 
 ### Geth
 * 静态节点列表的位置在 `<datadir>/geth/static-nodes.json` . <datadir>由命令行参数--datadir指定, 默认为`$HOME/.ethereum`
