@@ -25,11 +25,11 @@ Interface data updates per 8s, please don't access frequently, or you will be bl
 ## RPC Node
 Choose the rpc node with the lowest delay, broadcast transactions more efficiently.
 
-* Asia-Pacific https://api.taichi.network:10001
+**Asia-Pacific: https://api.taichi.network:10001**
 
-* Europe https://api-eu.taichi.network:10001
+**Europe: https://api-eu.taichi.network:10001**
 
-* North America https://api-us.taichi.network:10001
+**North: America https://api-us.taichi.network:10001**
 
 ## Broadcast TX | eth_sendRawTransaction
 Submit a signed transaction to the node for broadcasting to the Ethereum network.
