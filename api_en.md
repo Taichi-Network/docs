@@ -31,11 +31,11 @@ Choose the rpc node with the lowest delay, broadcast transactions more efficient
 
 * North America https://api-us.taichi.network:10001
 
-### eth_sendRawTransaction
+## Broadcast TX | eth_sendRawTransaction
 Submit a signed transaction to the node for broadcasting to the Ethereum network.
 
 ### Parameters
-1.DATA, signed transaction data.
+DATA, signed transaction data.
 ```json
 params: ["0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"]
 ```
@@ -66,11 +66,11 @@ Response：
 }
 ```
 
-### eth_sendPrivateTransaction
+## Private TX | eth_sendPrivateTransaction
 Submit a signed transaction to the node, and it will not be broadcast to the Ethereum network through p2p before the transaction is confirmed.
 
 ### Parameters
-1.DATA, signed transaction data.
+DATA, signed transaction data.
 ```json
 params: ["0xf86c0785080ad9f00082627094302fc4c7231589239912d62ec7ea6266d771cfdf88024a8d93446ac0008025a01450674b2c65e7902d9f03cbf899bb1063b2b14ca5e6a7fa5616d420b67196c1a049063bc399b171b0c570aeba9d33bc78a550701c3e95238947b90f1ccf841032"]
 ```
