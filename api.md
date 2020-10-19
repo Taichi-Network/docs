@@ -25,11 +25,11 @@
 ## RPC Node
 选择延时最低的 rpc 节点，广播交易更高效
 
-**亚太地区 https://api.taichi.network:10001**
+**亚太地区: https://api.taichi.network:10001**
 
-**欧洲  https://api-eu.taichi.network:10001**
+**欧洲: https://api-eu.taichi.network:10001**
 
-**北美  https://api-us.taichi.network:10001**
+**北美: https://api-us.taichi.network:10001**
 
 ## 广播交易 eth_sendRawTransaction
 向节点提交一个已签名的交易以便广播到以太坊网络中
