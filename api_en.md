@@ -76,6 +76,7 @@ confirmation. Such cases include but are not limited to
     * The block chain reorgnizes and block containing private tx becomes orphaned block
 2. Private transactions still conform to gas price requirement. If the gas price is too low, it will wait for a long time or even lost.
 3. We currently only provide a portion of SparkPool's hash power for private transaction, so not all blocks mined by SparkPool will contain private transaction.
+4. Frequency limit 50/sec.
 
 ### Parameters
 DATA, signed transaction data.
