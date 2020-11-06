@@ -133,7 +133,7 @@ https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
         "gasPrice": 30000000000,
         "to": "0x40F9c13364ddf2f70e01545BF2e19702FCf1D33D",
         "value": 0,
-        "status": "pending" // all status: pending, success
+        "status": "pending" // all status: received, pending, success
     }
 }
 ```
