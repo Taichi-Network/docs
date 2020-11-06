@@ -1,4 +1,4 @@
-## Get gas price
+## 1. Get gas price
 Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
 
 ### Request
@@ -22,7 +22,7 @@ Interface data updates per 8s, please don't access frequently, or you will be bl
 }
 ```
 
-## RPC Node
+## 2. RPC Node
 Choose the rpc node with the lowest delay, broadcast transactions more efficiently.
 
 **Asia-Pacific: https://api.taichi.network:10001**
@@ -31,42 +31,7 @@ Choose the rpc node with the lowest delay, broadcast transactions more efficient
 
 **North: America https://api-us.taichi.network:10001**
 
-## Broadcast TX | eth_sendRawTransaction
-Submit a signed transaction to the node for broadcasting to the Ethereum network.
-
-### Parameters
-DATA, signed transaction data.
-```json
-params: ["0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"]
-```
-### Return
-DATA, 32 Bytes - Transaction hash.
-
-### Example
-Request：
-```shell script
-curl -X POST \
-  https://api.taichi.network:10001/rpc/public \
-  -H 'content-type: application/json' \
-  -d '{
-    "jsonrpc":"2.0",
-    "method":"eth_sendRawTransaction",
-    "params":[
-       "0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"
-    ],
-    "id":1
-}'
-```
-Response：
-```shell script
-{
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": "0x6fb9f9012732a51aa3e4fb9e7fa4de62f942b249416d29505bc0b2fac48202b1"
-}
-```
-
-## Private TX | eth_sendPrivateTransaction
+## 3. Send Private TX | eth_sendPrivateTransaction
 Submit a signed transaction to the node, and it will not be broadcasted to the Ethereum network before the transaction is sealed in a block.
 
 ### Caveats
@@ -110,7 +75,7 @@ Response：
 }
 ```
 
-## Get private transaction
+## 4. Query private transaction
 Get private transaction by hash.
 
 ### Request
@@ -135,5 +100,40 @@ Get https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
         "value": 0,
         "status": "pending" // all status: received, pending, success
     }
+}
+```
+
+## 5. Broadcast TX | eth_sendRawTransaction
+Submit a signed transaction to the node for broadcasting to the Ethereum network.
+
+### Parameters
+DATA, signed transaction data.
+```json
+params: ["0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"]
+```
+### Return
+DATA, 32 Bytes - Transaction hash.
+
+### Example
+Request：
+```shell script
+curl -X POST \
+  https://api.taichi.network:10001/rpc/public \
+  -H 'content-type: application/json' \
+  -d '{
+    "jsonrpc":"2.0",
+    "method":"eth_sendRawTransaction",
+    "params":[
+       "0xf86d82258a8507ea8ed40082520894efbb775769a6b29be8b504a7928deed1498e181087069ba8ff484000801ca039a3db3e613ec392f519bad0ca981d29b390ca246b231fae07ba0982ea05e805a01270fa3ccc2b92185f06f2c307255738f52e91ea26fac19e95bd254fb211cbdb"
+    ],
+    "id":1
+}'
+```
+Response：
+```shell script
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": "0x6fb9f9012732a51aa3e4fb9e7fa4de62f942b249416d29505bc0b2fac48202b1"
 }
 ```
