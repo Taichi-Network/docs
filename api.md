@@ -1,4 +1,4 @@
-## 获取gas price
+## 1. 获取 ETH gas price
 接口数据每 8s 更新一次，请控制访问频率(间隔 >= 8s)，频率太高会被拉黑名单；已部署负载均衡。
 
 ### 请求
@@ -22,7 +22,7 @@
 }
 ```
 
-## RPC Node
+## 2. RPC Node
 选择延时最低的 rpc 节点，广播交易更高效
 
 **亚太地区: https://api.taichi.network:10001**
@@ -66,7 +66,7 @@ Response：
 }
 ```
 
-## 隐私交易 eth_sendPrivateTransaction
+## 3. 发送隐私交易 eth_sendPrivateTransaction
 向节点提交一个已签名的交易，交易被打包前不会通过p2p广播到以太坊网络中。
 
 ### 注意事项
@@ -109,11 +109,11 @@ Response：
 }
 ```
 
-## 隐私交易查询
+## 4. 隐私交易查询
 查询隐私交易信息。
 
 ### 请求
-https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
+GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 
 ### 参数
 - txHash String.
