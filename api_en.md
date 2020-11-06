@@ -109,3 +109,30 @@ Response：
     "result": "0x2531af4feb0a4ddf256a4b0ffa54563c9a857b7cf6e0987a26e446e1dc015578"
 }
 ```
+
+## Get private transaction
+Get private transaction by hash.
+
+### 请求
+https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
+
+### 参数
+- txHash String.
+
+### 响应
+```json
+{
+    "jsonrpc": "2.0",
+    "id": 1,
+    "result": {
+        "txHash": "0x7d03d5990b2250ceb3972f1ce7c663871b0e96136d7f3064456b5da48cf4457f",
+        "nonce": 63,
+        "from": "0x40F9c13364ddf2f70e01545BF2e19702FCf1D33D",
+        "gasLimit": 21000,
+        "gasPrice": 30000000000,
+        "to": "0x40F9c13364ddf2f70e01545BF2e19702FCf1D33D",
+        "value": 0,
+        "status": "pending" // all status: pending, success
+    }
+}
+```
