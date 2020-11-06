@@ -79,7 +79,7 @@ Response：
 Get private transaction by hash.
 
 ### Request
-Get https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
+GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 
 ### Parameters
 - txHash String.
