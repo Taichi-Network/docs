@@ -121,9 +121,8 @@ https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 ### 响应
 ```json
 {
-    "jsonrpc": "2.0",
-    "id": 1,
-    "result": {
+    "success": true, // false表示交易不存在
+    "obj": {
         "txHash": "0x7d03d5990b2250ceb3972f1ce7c663871b0e96136d7f3064456b5da48cf4457f",
         "nonce": 63,
         "from": "0x40F9c13364ddf2f70e01545BF2e19702FCf1D33D",
