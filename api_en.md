@@ -113,13 +113,13 @@ Response：
 ## Get private transaction
 Get private transaction by hash.
 
-### 请求
-https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
+### Request
+Get https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 
-### 参数
+### Parameters
 - txHash String.
 
-### 响应
+### Response
 ```json
 {
     "success": true, // false means that the transaction does not exist
