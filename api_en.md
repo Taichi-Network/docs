@@ -1,5 +1,5 @@
 ## 1. Get gas price
-Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
+Query Ethereum's GasPrice forecast data, Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
 
 ### Request
 - China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
