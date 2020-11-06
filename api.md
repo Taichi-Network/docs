@@ -1,5 +1,5 @@
 ## 1. 获取 ETH gas price
-接口数据每 8s 更新一次，请控制访问频率(间隔 >= 8s)，频率太高会被拉黑名单；已部署负载均衡。
+查询当前 ETH GasPrice 预测数据。接口数据每 8s 更新一次，请控制访问频率(间隔 >= 8s)，频率太高会被拉黑名单；已部署负载均衡。
 
 ### 请求
 - 中国大陆: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
