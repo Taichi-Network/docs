@@ -83,6 +83,13 @@ GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 ### 参数
 - txHash String.
 
+### 交易状态说明
+- received, 太极已经收到交易。
+- pending, 交易等待确认中。
+- success, 交易确认成功。
+- fail, 交易失败(交易数据可能有错)。
+- timeout, 交易超过3小时还未确认。
+
 ### 响应
 ```json
 {
@@ -97,7 +104,7 @@ GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
         "gasPrice": 30000000000,
         "to": "0x40F9c13364ddf2f70e01545BF2e19702FCf1D33D",
         "value": 0,
-        "status": "pending" // all status: received, pending, success
+        "status": "pending" // all status: received, pending, success, fail, timeout
     }
 }
 ```
