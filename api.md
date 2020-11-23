@@ -54,11 +54,11 @@ DATA，32字节 - 交易哈希值
 Request：
 ```shell script
 curl -X POST \
-  https://api.taichi.network:10001/rpc/public \
+  https://api.taichi.network:10001/rpc/private \
   -H 'content-type: application/json' \
   -d '{
     "jsonrpc":"2.0",
-    "method":"eth_sendPrivateTransaction",
+    "method":"eth_sendRawTransaction",
     "params":[
        "0xf86c0785080ad9f00082627094302fc4c7231589239912d62ec7ea6266d771cfdf88024a8d93446ac0008025a01450674b2c65e7902d9f03cbf899bb1063b2b14ca5e6a7fa5616d420b67196c1a049063bc399b171b0c570aeba9d33bc78a550701c3e95238947b90f1ccf841032"
     ],
