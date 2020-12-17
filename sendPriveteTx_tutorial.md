@@ -12,7 +12,9 @@ We refactor the mehtod 'eth_sendRawTransaction', If you send tx by `/rpc/private
 ## Send tx By MetaMask
 
 ![](imgs/1.png)
+
 ![](imgs/2.png)
+
 ![](imgs/3.png)
 
 All tx send from metamask will be invisible. 
