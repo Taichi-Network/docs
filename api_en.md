@@ -93,7 +93,7 @@ GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 - timeout, the transaction has not been confirmed for more than 3 hours.
 
 ### Response
-```json
+```
 {
     "success": true, // false means that the transaction does not exist
     "obj": {
@@ -144,4 +144,34 @@ Response：
     "id": 1,
     "result": "0x6fb9f9012732a51aa3e4fb9e7fa4de62f942b249416d29505bc0b2fac48202b1"
 }
+```
+
+## 6. Broadcast TX | eth_sendUncheckedTransaction
+Same as `eth_sendRawTransaction`, but never checks nonce or gas price of the transaction. This can be used to send transactions with faster response. You have to make sure yourself the transaction is valid.
+
+## 7. MEV Bundle | eth_sendBundle
+You can pack multiple transactions into a bundle. If you pay enough ETH to coinbase through the bundle, it will be placed at the font seat. 
+
+For reference, check [docs at Flashbots](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint).
+
+### Request
+```
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "eth_sendBundle",
+  "params": [
+    {
+      txs,               // Array[String], A list of signed transactions to execute in an atomic bundle
+      blockNumber,       // String, a hex encoded block number for which this bundle is valid on
+      minTimestamp,      // (Optional) Number, the minimum timestamp for which this bundle is valid, in seconds since the unix epoch
+      maxTimestamp,      // (Optional) Number, the maximum timestamp for which this bundle is valid, in seconds since the unix epoch
+      revertingTxHashes, // (Optional) Array[String], A list of tx hashes that are allowed to revert 
+    }
+  ]
+}
+```
+### Example
+```shell
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}' https://api.taichi.network:10001/rpc/public
 ```
