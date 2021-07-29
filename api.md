@@ -149,10 +149,9 @@ Response：
 和`eth_sendRawTransaction`一样, 但是不检查nonce和gasprice有效性，用这个接口广播交易可以获得更快的响应。需要自己保证交易的有效性。
 
 ## 7. MEV 交易包 eth_sendBundle
-可以将多比交易打成一个交易包发送。如果在交易包中给矿池支付足够的费用，矿池将整体打包这几笔交易，
-You can pack multiple transactions into a bundle. If you pay enough ETH to coinbase through the bundle, it will be placed at the font seat. 
+可以将多比交易打成一个交易包发送。如果在交易包中给矿池支付足够的费用，矿池将整体打包这几笔交易，并排在最前面。
 
-For reference, check [docs at Flashbots](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint).
+可参考[Flashbots的文档](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint).
 
 ### 请求
 ```
