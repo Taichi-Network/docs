@@ -145,3 +145,38 @@ Response：
 }
 ```
 
+## 6. 广播交易 eth_sendUncheckedTransaction
+和`eth_sendRawTransaction`一样, 但是不检查nonce和gasprice有效性，用这个接口广播交易可以获得更快的响应。需要自己保证交易的有效性。
+
+## 7. MEV 交易包 eth_sendBundle
+可以将多比交易打成一个交易包发送。如果在交易包中给矿池支付足够的费用，矿池将整体打包这几笔交易，
+You can pack multiple transactions into a bundle. If you pay enough ETH to coinbase through the bundle, it will be placed at the font seat. 
+
+For reference, check [docs at Flashbots](https://docs.flashbots.net/flashbots-auction/searchers/advanced/rpc-endpoint).
+
+### 请求
+```
+{
+  "jsonrpc": "2.0",
+  "id": 1,
+  "method": "eth_sendBundle",
+  "params": [
+    {
+      txs,               // Array[String], 一组签名后的交易
+      blockNumber,       // String, 16进制，预期需要上链的高度
+      minTimestamp,      // (可选) 最早上链时间(unix 时间戳)
+      maxTimestamp,      // (可选) 最晚上链时间(unix 时间戳)
+      revertingTxHashes, // (可选) Array[String], 允许revert的交易hash
+    }
+  ]
+}
+```
+
+### 响应
+```json
+{"jsonrpc": "2.0", "id": 1, "result": null}
+```
+### 范例
+```shell
+curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}' https://api.taichi.network:10001/rpc/public
+```
