@@ -92,7 +92,7 @@ GET https://api.taichi.network:10001/txscan/priTx?txHash=:txHash
 - timeout, 交易超过3小时还未确认。
 
 ### 响应
-```json
+```
 {
     "success": true, // false表示交易不存在
     "obj": {
