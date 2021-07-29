@@ -171,6 +171,10 @@ For reference, check [docs at Flashbots](https://docs.flashbots.net/flashbots-au
   ]
 }
 ```
+### Response
+```json
+{"jsonrpc": "2.0", "id": 1, "result": null}
+```
 ### Example
 ```shell
 curl -X POST -H "Content-Type: application/json" --data '{"jsonrpc":"2.0","method":"eth_sendBundle","params":[{see above}],"id":1}' https://api.taichi.network:10001/rpc/public
