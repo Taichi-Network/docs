@@ -147,7 +147,7 @@ Response：
 ```
 
 ## 6. Broadcast TX | eth_sendUncheckedTransaction
-Same as `eth_sendRawTransaction`, but never checks nonce or gas price of the transaction. This can be used to send transactions with faster response. You have to make sure yourself the transaction is valid.
+Same as `eth_sendRawTransaction`, but never checks nonce or gas price of the transaction. This can be used to broadcast transactions with faster response. You have to make sure yourself the transaction is valid.
 
 ## 7. MEV Bundle | eth_sendBundle
 You can pack multiple transactions into a bundle. If you pay enough ETH to coinbase through the bundle, it will be placed at the font seat. 
