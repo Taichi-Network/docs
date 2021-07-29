@@ -37,11 +37,12 @@ Submit a signed transaction to the node, and it will not be broadcasted to the E
 ### Caveats
 1. We provide private transaction with our best effort. However, there are still ocassions that your private transaction can be exposed to public before 
 confirmation. Such cases include but are not limited to
-    * The block containing private tx becomes uncle block
-    * The block chain reorgnizes and block containing private tx becomes orphaned block
+    * The block containing private tx becomes uncle block.
+    * The block chain reorgnizes and block containing private tx becomes orphaned block.
+    * Deficiency in Ethereum specs or implementations.
 2. Private transactions still conform to gas price requirement. If the gas price is too low, it will wait for a long time or even lost.
 3. We currently only provide a portion of SparkPool's hash power for private transaction, so not all blocks mined by SparkPool will contain private transaction.
-4. Frequency limit 50/sec.
+4. Rate limit: 50/sec.
 
 ### Parameters
 DATA, signed transaction data.
