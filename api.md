@@ -2,11 +2,11 @@
 查询当前 ETH GasPrice 预测数据。接口数据每 8s 更新一次，请控制访问频率(间隔 >= 8s)，频率太高会被拉黑名单；已部署负载均衡。
 
 ### 请求
-- 中国大陆: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
-- 国际: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
+
+- GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
 
 ### 参数
-- utm_source String. Your app name (e.g. imToken)
+- utm_source String. Your app name (e.g. Xcompany)
 
 ### 响应
 ```json
@@ -40,7 +40,7 @@
     * 区块链发生重组。打包这笔交易的块成为孤块。
     * Ethereum规范或实现中的存在缺陷。
 2. 隐私交易仍需要参与gas price竞价，过低的gas price会导致交易长时间无法打包甚至丢失。
-3. 我们目前仅提供一部分算力用于打包隐私交易，因此不是每一个SparkPool产生的区块都能包含隐私交易。
+3. 我们目前仅提供一部分算力用于打包隐私交易，因此不是每一个区块都能包含隐私交易。
 4. 访问频率50次/秒。
 
 ### Parameters
