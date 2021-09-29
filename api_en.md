@@ -2,11 +2,10 @@
 Query Ethereum's GasPrice forecast data, Interface data updates per 8s, please don't access frequently, or you will be blocked. A high-availability cluster has been deployed.
 
 ### Request
-- China Mainland: GET https://gasnow.sparkpool.com/api/v3/gas/price?utm_source=:YourAPPName
 - International: GET https://www.gasnow.org/api/v3/gas/price?utm_source=:YourAPPName
 
 ### Parameters
-- utm_source String. Your app name (e.g. imToken)
+- utm_source String. Your app name (e.g. xCompany)
 
 ### Response Example
 ```json
@@ -41,7 +40,7 @@ confirmation. Such cases include but are not limited to
     * The block chain reorgnizes and block containing private tx becomes orphaned block.
     * Deficiency in Ethereum specs or implementations.
 2. Private transactions still conform to gas price requirement. If the gas price is too low, it will wait for a long time or even lost.
-3. We currently only provide a portion of SparkPool's hash power for private transaction, so not all blocks mined by SparkPool will contain private transaction.
+3. We currently only provide a portion of hash power for private transaction, so not all blocks mined will contain private transaction.
 4. Rate limit: 50/sec.
 
 ### Parameters
